@@ -24,6 +24,8 @@ hold_effects_dict = {}      # HOLD_EFFECT_XXX --> hold effect
 battle_usages_dict = {}     # ITEM_B_USE_XXX --> battle usage
 named_mt_to_mt_dict = {}    # ITEM_TMXX_XXX --> ITEM_TMXXX
 
+item_names_dict = {}        # ITEM_XXX --> "name"
+
 # builds a dictionary with item ids and their numbers (ITEM_XXX, 0)
 def build_item_ids_dict():
     with open(rm.item_ids_path, 'r', encoding='utf-8') as f:
@@ -173,6 +175,7 @@ def parse_to_json(items_file):
 
                 if key == 'name':
                     value = re.sub(r'\_\("|"\)', '', value)
+                    item_names_dict[item_id] = value
                 elif key == 'itemId':
                     value = item_ids_dict[try_fix_named_tm_hm(value)]
                     key = 'item_id'

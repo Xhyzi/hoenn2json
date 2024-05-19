@@ -31,6 +31,7 @@ def build_abilities_names_dict():
                 key = match.group(1)
                 value = match.group(2)
                 abilities_names_dict[key] = value    
+        return abilities_names_dict
 
 # build a dictionary with ability ids as keys and ability descriptions as values (ABILITY_XXX, "description")
 def build_abilities_desc_dict():

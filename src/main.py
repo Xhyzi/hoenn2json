@@ -23,6 +23,7 @@ import parser_abilities as pa
 import parser_growth_rates as pgr
 import parser_items as pi
 import parser_dex_entries as pde
+import parser_species as ps
 
 # TODO: add cmd line support to pass params (game folder path, if not use config as default)
 # TODO: add cmd line support for a "clean" option to remove output files
@@ -52,3 +53,8 @@ with open('../output/items.json', 'w', encoding='utf-8') as f:
 json_dex_entries_list = pde.parse_to_json(rm.dex_data_file)
 with open('../output/dex_entries.json', 'w', encoding='utf-8') as f:
     json.dump(json_dex_entries_list, f, indent=4, ensure_ascii=False)
+
+# Generates species.json
+json_species_list = ps.parse_to_json(rm.species_file)
+with open('../output/species.json', 'w', encoding='utf-8') as f:
+    json.dump(json_species_list, f, indent=4, ensure_ascii=False)

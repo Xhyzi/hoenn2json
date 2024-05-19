@@ -44,7 +44,10 @@ dex_data_file = os.path.join(game_folder_path, config['settings']['dex_data_file
 dex_national_ids_file = os.path.join(game_folder_path, config['settings']['dex_national_ids_file'])
 
 # pokemon data
+species_ids_path = os.path.join(game_folder_path, config['settings']['species_ids_file'])
 species_names_path = os.path.join(game_folder_path, config['settings']['species_names_file'])
+egg_groups_path = os.path.join(game_folder_path, config['settings']['egg_groups_file'])
+species_file = os.path.join(game_folder_path, config['settings']['species_file'])
 
 # output files
 output_dir = config['output']['output_dir']
